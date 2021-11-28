@@ -1,5 +1,4 @@
-package com.phurbalama.spring.basic.springin5steps;
-
+package com.phurbalama.spring.basic.springin5steps.basic;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,6 +1,7 @@
-package com.phurbalama.spring.basic.springin5steps;
+package com.phurbalama.spring.basic.springin5steps.basic;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //this is a dependency
@@ -9,13 +10,10 @@ public class BinarySearchImpl {
 	
 	//this is a dependency it means sortAlgorithm is a dependency for BinarySearch
 	@Autowired
+	@Qualifier("quick")
 	private SortAlgorithm sortAlgorithm;
 	
 	
-	public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
-		super();
-		this.sortAlgorithm = sortAlgorithm;
-	}
 
 
 	public int binarySearch(int[] numbers, int numberToSearchFor) {
