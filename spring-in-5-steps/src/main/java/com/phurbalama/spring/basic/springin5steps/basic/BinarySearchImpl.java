@@ -1,7 +1,7 @@
 package com.phurbalama.spring.basic.springin5steps.basic;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+//import javax.annotation.PostConstruct;
+//import javax.annotation.PreDestroy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +37,7 @@ public class BinarySearchImpl {
 	}
 	
 	//as soon as bean is created, post construct is called
-	@PostConstruct
+	/*@PostConstruct
 	public void postConstruct() {
 		logger.info("postconstruct");
 	}
@@ -46,7 +46,7 @@ public class BinarySearchImpl {
 	@PreDestroy
 	public void preDestroy() {
 		logger.info("preDestroy");
-	}
+	}*/
 	
 	
 }
