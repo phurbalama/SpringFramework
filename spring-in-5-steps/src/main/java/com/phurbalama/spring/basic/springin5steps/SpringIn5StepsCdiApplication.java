@@ -11,31 +11,30 @@ import org.springframework.context.annotation.Configuration;
 
 import com.phurbalama.spring.basic.componentscan.ComponentDAO;
 import com.phurbalama.spring.basic.springin5steps.basic.BinarySearchImpl;
+import com.phurbalama.spring.basic.springin5steps.cdi.SomeCdiBusiness;
+import com.phurbalama.spring.basic.springin5steps.cdi.SomeCdiDAO;
 import com.phurbalama.spring.basic.springin5steps.scope.PersonDAO;
 
 
 
 
 //automatically scans the packages and sub packages
+//@SpringBootApplication
 @Configuration
 @ComponentScan
-public class SpringIn5StepsScopeApplication {
+public class SpringIn5StepsCdiApplication {
 	
-	private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsScopeApplication.class);
+	private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsCdiApplication.class);
 	public static void main(String[] args) {
 	
 
-		try(AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringIn5StepsComponentApplication.class)){
-		PersonDAO personDAO = applicationContext.getBean(PersonDAO.class);
+		try(AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringIn5StepsCdiApplication.class)){
+		SomeCdiBusiness business = applicationContext.getBean(SomeCdiBusiness.class);
 		
-		PersonDAO personDAO1 = applicationContext.getBean(PersonDAO.class);
 		
-		LOGGER.info("{}", personDAO);
-		LOGGER.info("{}", personDAO.getJdbcConnection());
-		
-		LOGGER.info("{}", personDAO1);
-		LOGGER.info("{}", personDAO.getJdbcConnection());
+		LOGGER.info("{} dao-{}", business,business.getSomecdidao());
 		}
+		
 		
   }
 
